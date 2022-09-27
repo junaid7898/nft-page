@@ -1,0 +1,85 @@
+.header-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  color: #fff;
+
+  padding: 0 2rem;
+  text-transform: uppercase;
+  list-style: none;
+
+  font-family: $bold;
+  font-weight: $bold--weight;
+  @include respond(tab) {
+    color: $color-dark;
+
+    font-size: 2.7rem;
+  }
+
+  & :not(:first-child) {
+    margin-left: $inner-left;
+    @include respond(tab) {
+      margin-left: 0;
+    }
+  }
+
+  &__container {
+    display: block;
+    transition: all 400ms;
+
+    @include respond(tab) {
+      position: fixed;
+      inset: 0;
+      background-color: $color-primary;
+      top: 11.5vh;
+      width: 100vw;
+      opacity: 0;
+      transform: translateY(-120vh);
+    }
+
+    &-active {
+      display: block;
+      transition: all 400ms;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @include respond(tab) {
+    display: block;
+    text-align: left;
+
+    margin-left: $inner-left;
+    margin-top: $inner-left;
+  }
+  & li {
+    position: relative;
+    counter-increment: nav-links;
+    padding-left: 2rem;
+
+    &::before {
+      content: '0' counter(nav-links);
+      //   margin-bottom: 1.4rem;
+      //   background-color: red;
+      font-size: 1.4rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include respond(tab) {
+        font-size: 1.6rem;
+        top: -1rem;
+      }
+    }
+
+    @include respond(tab) {
+      line-height: 5rem;
+    }
+  }
+  &__container {
+    flex: 1;
+    align-self: center;
+  }
+}

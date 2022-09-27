@@ -1,0 +1,42 @@
+// ===============================================================================
+
+//                          BASE IMPORTS
+
+// ===============================================================================
+@import '../sass/abstract/variables';
+@import '../sass/mixin/mediaQueries';
+@import '../sass/typography/fontFamily';
+@import '../sass/typography/fontSize';
+@import '../sass/animations/animations';
+@import '../sass/base/base';
+
+// ===============================================================================
+
+//                          IMPORTS FOR COMPONENTS
+
+// ===============================================================================
+
+//HEADER COMPONENT
+@import '../../src/components/header/styles/header';
+@import '../../src/components/header/styles/headerLinks';
+@import '../../src/components/header/styles/soundLogo';
+@import '../../src/components/header/styles/navMobileLogo';
+
+//FOOTER COMPONENT
+@import '../../src/components/footer/styles/footer';
+@import '../../src/components/footer/styles/footerLinks';
+@import '../../src/components/footer/styles/footerRight';
+
+//CARD COMPONENT
+@import '../../src/components/card/card';
+
+// ===============================================================================
+
+//                          IMPORTS FOR PAGES
+
+// ===============================================================================
+
+//HOME PAGE
+@import '../../src/pages/home-page/styles/homePage';
+@import '../../src/pages/home-page/styles/homePageIntro';
+@import '../../src/pages/home-page/styles/aboutPage';

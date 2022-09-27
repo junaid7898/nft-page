@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex: 1;
+  }
+  &--logo {
+    fill: currentColor;
+    margin: 0 $inner-left;
+
+    max-width: 19rem;
+    min-width: 15rem;
+    max-height: 2.6rem;
+    min-height: 2.2rem;
+  }
+
+  &-container {
+    background-color: $color-dark;
+    padding: 3rem;
+    box-shadow: 0 0 10rem $color-dark;
+    min-height: 10vh;
+    transition: all 200ms;
+    color: $color-primary;
+    &--pink {
+      background-color: $color-primary;
+      color: $color-dark;
+    }
+  }
+}

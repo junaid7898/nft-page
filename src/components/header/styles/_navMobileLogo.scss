@@ -1,0 +1,55 @@
+.menu {
+  display: none;
+
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  background-color: currentColor;
+  @include respond(tab) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  transition: all 0.2s;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &--top,
+  &--bottom {
+    width: 20px;
+    height: 2px;
+
+    position: absolute;
+    &-white {
+      background-color: $color-dark;
+    }
+
+    &-black {
+      background-color: #fff;
+    }
+  }
+  &--bottom {
+    top: 55%;
+    transition: all 0.2s;
+
+    //animation
+    &-active {
+      top: 50%;
+      transform: rotate(-50deg);
+    }
+  }
+
+  &--top {
+    transition: all 0.2s;
+    top: 40%;
+    &-active {
+      top: 50%;
+      transform: rotate(50deg);
+    }
+  }
+}

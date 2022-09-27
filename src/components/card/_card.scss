@@ -1,0 +1,23 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 22rem;
+  height: 24rem;
+
+  &-img {
+    width: 100%;
+    max-width: 22rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 200ms;
+    @include respond(phone) {
+      // width: 20rem;
+    }
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}

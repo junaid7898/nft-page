@@ -1,0 +1,37 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == big-tab {
+    @media (max-width: 1200px) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab {
+    @media (max-width: 1000px) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == small-tab {
+    @media (max-width: 800px) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == phone {
+    @media (max-width: 650px) {
+      @content;
+    } //768px
+  }
+  @if $breakpoint == desktop {
+    @media (max-width: 1100px) {
+      @content;
+    } //1400px
+  }
+  @if $breakpoint == big-desktop {
+    @media (max-width: 1600px) {
+      @content;
+    } //1400px
+  }
+  @if $breakpoint == big {
+    @media (min-width: 1250px) {
+      @content;
+    }
+  }
+}
