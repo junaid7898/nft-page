@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
-  z-index: 1000;
   &-content {
     display: flex;
     justify-content: space-between;
@@ -22,12 +22,16 @@
   }
 
   &-container {
+    z-index: 1000;
     background-color: $color-dark;
     padding: 3rem;
     box-shadow: 0 0 10rem $color-dark;
     min-height: 10vh;
     transition: all 200ms;
     color: $color-primary;
+
+    position: fixed;
+    width: 100%;
     &--pink {
       background-color: $color-primary;
       color: $color-dark;

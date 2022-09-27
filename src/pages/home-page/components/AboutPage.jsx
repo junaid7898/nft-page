@@ -6,12 +6,15 @@ const AboutPage = () => {
   const [refX, setRefX] = useState(1);
   const ref1 = useRef();
   const isInViewPort = useIsInViewPort(ref1);
+  const prevScrollValue = useRef(0);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      console.log("currentScroll", currentScrollY);
       if (isInViewPort) {
-        setRefX(currentScrollY);
+        setRefX(currentScrollY % prevScrollValue.current);
+      } else {
+        prevScrollValue.current = currentScrollY;
       }
     };
 
@@ -53,11 +56,12 @@ const AboutPage = () => {
             style={{ transform: `translate3d(${refX}px, 0, 0)` }}
           >
             {testImages.map((item) => {
-              return <Card source={item} type="simple" />;
+              return <Card className="card-2" source={item} type="simple" />;
             })}
           </div>
         </div>
       </div>
+      {/* <div style={{ minHeight: "5000px" }}></div> */}
     </div>
   );
 };

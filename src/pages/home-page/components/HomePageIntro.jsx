@@ -47,7 +47,14 @@ const HomePageIntro = () => {
         <div className="home__intro--right-container">
           <div className="home__intro--right">
             {testImages.map((item) => {
-              return <Card key={item} source={item} type="simple" />;
+              return (
+                <Card
+                  className="card-1"
+                  key={item}
+                  source={item}
+                  type="simple"
+                />
+              );
             })}
           </div>
         </div>
