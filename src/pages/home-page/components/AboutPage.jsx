@@ -13,6 +13,7 @@ const AboutPage = () => {
       const currentScrollY = window.scrollY;
       if (isInViewPort) {
         setRefX(currentScrollY % prevScrollValue.current);
+        console.log("position:", refX);
       } else {
         prevScrollValue.current = currentScrollY;
       }
@@ -53,10 +54,20 @@ const AboutPage = () => {
         <div className="about--scroll" ref={ref1}>
           <div
             className="about--scroll-background"
-            style={{ transform: `translate3d(${refX}px, 0, 0)` }}
+            style={{
+              transform: isInViewPort && `translate3d(${refX}px, 0, 0)`,
+            }}
           >
             {testImages.map((item) => {
-              return <Card className="card-2" source={item} type="simple" />;
+              return (
+                <div className="scroll-card">
+                  <img
+                    src={item}
+                    alt="Scroll Card"
+                    className="scroll-card--img"
+                  />
+                </div>
+              );
             })}
           </div>
         </div>
