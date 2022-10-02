@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Card from "../../../components/card/Card";
 import useIsInViewPort from "../../../hooks/useIsInViewPort";
 
 const AboutPage = () => {
@@ -13,7 +12,6 @@ const AboutPage = () => {
       const currentScrollY = window.scrollY;
       if (isInViewPort) {
         setRefX(currentScrollY % prevScrollValue.current);
-        console.log("position:", refX);
       } else {
         prevScrollValue.current = currentScrollY;
       }
